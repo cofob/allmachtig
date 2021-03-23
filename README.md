@@ -1,0 +1,3 @@
+# allmachtig
+
+Discord bot
