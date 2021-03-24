@@ -12,4 +12,4 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install sshpass
       - name: Backup DB
-        run: sshpass -p ${{ secrets.SSH_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo sh /home/dsbot/backup_allmachtig.sh"
+        run: sshpass -p ${{ secrets.SSH_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "source ~/backup_allmachtig.sh"
