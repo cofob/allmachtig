@@ -26,7 +26,7 @@ async def main(type):
         with open('db.bak', 'rb') as file1:
             with open('db.enc', 'wb') as file2:
                 while data := file1.read(512):
-                    ciphertext, tag = cipher.encrypt_and_digest(data)
+                    ciphertext = cipher.encrypt(data)
                     file2.write(ciphertext)
         file = await client.upload_file('db.enc')
         await client.send_message(chat, f'nonce:base64:{base64.b64encode(nonce).decode()}\n'
