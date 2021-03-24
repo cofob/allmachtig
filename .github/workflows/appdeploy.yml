@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Install sshpass
         run: sudo apt-get install sshpass
-      - name: Run command on SSH server
+      - name: Deploy
         run: sshpass -p ${{ secrets.SSH_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "${{ secrets.SSH_COMMAND }}"
