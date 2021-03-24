@@ -1,0 +1,15 @@
+name: Backup DB
+
+on: 
+  schedule:
+    - cron:  '* */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install sshpass
+        run: sudo apt-get install sshpass
+      - name: Backup DB
+        run: sshpass -p ${{ secrets.SSH_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo sh /home/dsbot/allmachtig/backup_db.sh"
