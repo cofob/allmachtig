@@ -25,5 +25,5 @@ class UserInGuild(Base):
     guild_username = BlobField(null=True)
 
 
-db.create_tables([User, Guild, UserInGuild])
 db.connect()
+db.create_tables([User, Guild, UserInGuild])
