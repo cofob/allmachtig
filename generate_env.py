@@ -13,5 +13,7 @@ add('API_ID')
 add('API_HASH')
 add('SECRET')
 add('CHAT')
+add('TOKEN')
+add('PROGRAM_PATH')
 
 os.system('chmod u+x env.sh')
