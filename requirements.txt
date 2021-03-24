@@ -2,3 +2,4 @@ telethon
 discord.py
 peewee
 pycryptodome
+discord-py-slash-command
