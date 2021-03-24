@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-03-24 18:37+0700\n"
-"PO-Revision-Date: 2021-03-24 18:38+0700\n"
+"POT-Creation-Date: 2021-03-24 20:17+0700\n"
+"PO-Revision-Date: 2021-03-24 20:52+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -15,6 +15,25 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
 
-#: __init__.py:11
+#: __init__.py:31
 msgid "ping_command"
 msgstr "Pong! Latency: {latency}ms"
+
+#: __init__.py:34
+msgid "Info"
+msgstr ""
+
+#: __init__.py:34
+msgid "command_info"
+msgstr ""
+"Bot which can a lot, [invite me](https://discord.com/oauth2/authorize?"
+"client_id=823847683605004289&permissions=8&scope=bot)\n"
+"Official [server](https://discord.gg/nUgfHmdZAF)\n"
+"Source: [GitHub](https://github.com/cofob/allmachtig), commit:\n"
+"```\n"
+"{commit}\n"
+"```"
+
+#: __init__.py:38
+msgid "bot_name"
+msgstr "by cofob"

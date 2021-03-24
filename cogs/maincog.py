@@ -1,5 +1,6 @@
 from discord.ext import commands
 import cogs as c
+import errors
 
 
 class MainCog(commands.Cog):
@@ -10,6 +11,14 @@ class MainCog(commands.Cog):
     @commands.command()
     async def ping(self, ctx):
         await ctx.send(self.c.ping(ctx))
+
+    @commands.command(aliases=['version', 'status'])
+    async def info(self, ctx):
+        await ctx.send(embed=self.c.info(ctx))
+
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        await self.c.on_error(ctx, error)
 
     async def on_message(self, message):
         print(message.content)
