@@ -10,11 +10,11 @@ class MainCog(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send(self.c.ping(ctx))
+        await ctx.send(await self.c.ping(ctx))
 
     @commands.command(aliases=['version', 'status'])
     async def info(self, ctx):
-        await ctx.send(embed=self.c.info(ctx))
+        await ctx.send(embed=await self.c.info(ctx))
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):

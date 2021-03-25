@@ -3,6 +3,7 @@ import discord
 import os
 from discord_slash import SlashCommand
 import settings
+import models
 
 # отправляем сообщение админу о загрузке
 if settings.debug:

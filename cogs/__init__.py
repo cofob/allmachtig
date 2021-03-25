@@ -30,13 +30,24 @@ class Commands:
     def __init__(self, bot):
         self.bot = bot
 
-    def ping(self, ctx):
+    async def before_invoke(self, ctx):
+        print(dir(ctx))
+        print(ctx.guild)
+        print(dir(ctx.guild))
+        print(ctx.guild.roles)
+        print(ctx.guild.categories)
+        print(ctx.guild.channels)
+        print(ctx.channel.nsfw)
+
+    async def ping(self, ctx):
+        await self.before_invoke(ctx)
         return _('ping_command').format(latency=int(self.bot.latency*1000))
 
-    def info(self, ctx):
-        return self.get_embed(_('Info'), _('command_info').format(commit=st.commit))
+    async def info(self, ctx):
+        await self.before_invoke(ctx)
+        return await self.get_embed(_('Info'), _('command_info').format(commit=st.commit))
 
-    def get_embed(self, title, description):
+    async def get_embed(self, title, description):
         embed = discord.Embed(title=title, description=description)
         embed.set_footer(text=_("bot_name"), icon_url=st.author_url)
         return embed
