@@ -1,3 +1,4 @@
+[![Backup DB](https://github.com/cofob/allmachtig/actions/workflows/backup.yml/badge.svg)](https://github.com/cofob/allmachtig/actions/workflows/backup.yml) [![Deploy App](https://github.com/cofob/allmachtig/actions/workflows/appdeploy.yml/badge.svg)](https://github.com/cofob/allmachtig/actions/workflows/appdeploy.yml) [![Python application](https://github.com/cofob/allmachtig/actions/workflows/python-app.yml/badge.svg)](https://github.com/cofob/allmachtig/actions/workflows/python-app.yml) [![Telegram Notification](https://github.com/cofob/allmachtig/actions/workflows/telegram.yml/badge.svg)](https://github.com/cofob/allmachtig/actions/workflows/telegram.yml)
 # allmachtig
 Дискорд бот который может многое! [Инвайт](https://discord.com/oauth2/authorize?client_id=823847683605004289&permissions=8&scope=bot), [оффициальный сервер](https://discord.gg/nUgfHmdZAF)
 ## Функции
