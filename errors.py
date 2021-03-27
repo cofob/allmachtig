@@ -1,0 +1,2 @@
+class IgnoringBot(Exception):
+    pass

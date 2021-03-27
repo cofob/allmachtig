@@ -10,7 +10,7 @@ class MainCog(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send(await self.c.ping(ctx))
+        await ctx.send(embed=await self.c.ping(ctx))
 
     @commands.command(aliases=['version', 'status'])
     async def info(self, ctx):
