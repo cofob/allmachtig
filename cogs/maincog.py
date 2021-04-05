@@ -9,8 +9,20 @@ class MainCog(commands.Cog):
         self.c = c.setup(bot)
 
     @commands.command()
+    async def error(self, ctx):
+        await self.c.error()
+
+    @commands.command()
+    async def get(self, ctx, setting):
+        await ctx.send(embed=await self.c.get(ctx, setting))
+
+    @commands.command()
+    async def set(self, ctx, setting, *, value):
+        await ctx.send(embed=await self.c.set(ctx, setting, value))
+
+    @commands.command()
     async def ping(self, ctx):
-        await ctx.send(await self.c.ping(ctx))
+        await ctx.send(embed=await self.c.ping(ctx))
 
     @commands.command(aliases=['version', 'status'])
     async def info(self, ctx):
