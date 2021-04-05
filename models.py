@@ -4,6 +4,7 @@ try:
 except ModuleNotFoundError:
    import pickle
 import settings as st
+import time
 
 
 db = SqliteDatabase('db.sqlite3')
@@ -105,21 +106,18 @@ class Message(Base):
     user = ForeignKeyField(UserInGuild)
     message_id = IntegerField()
     text = TextField(null=True)
-    timestamp = IntegerField()
+    timestamp = IntegerField(default=time.time)
     latest = BooleanField(True)
 
     @staticmethod
     def get_from_object(ctx, user):
-        obj = Message.get_or_none(user=user)
+        obj = Message.get_or_none(user=user, message_id=ctx.id)
         if obj is None:
-            obj = UserInGuild(user=user, guild=guild)
-        try:
-            settings = pickle.loads(obj.settings)
-        except:
-            settings = {}
-        settings |= st.base_user_settings
+            obj = UserInGuild(user=user, message_id=ctx.id)
+        obj.text = ctx.content
+        obj.message_id = ctx.id
         obj.save()
-        return obj, settings
+        return obj
 
 
 db.connect()
